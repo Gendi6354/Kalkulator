@@ -48,12 +48,12 @@ class MainScreen extends StatelessWidget {
                 ),
                 
                 Expanded(
-                  flex: 2,
+                  flex: 5,
                   child: CalcLable(),
                 ),
                 
                 Expanded(
-                  flex: 3,
+                  flex: 9,
                   child: Buttons(),
                 ),
               ],

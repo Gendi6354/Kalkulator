@@ -54,6 +54,12 @@ class CalculatorNotifier extends ValueNotifier<CalculatorState>
       return;
     }
     if (int.tryParse(number) == null && number != "=") {
+      if(number == '.')
+      {
+        mainLable += number;
+        value = value.copyWith(mainLable: mainLable);
+        return;
+      }
       if (num1 == 0) {
         num1 = num.parse(mainLable);
       } else if (num.parse(mainLable) != 0) {
@@ -81,7 +87,7 @@ class CalculatorNotifier extends ValueNotifier<CalculatorState>
     }
 
     if (int.tryParse(number) != null) {
-      if (num.parse(mainLable) == 0) {
+      if (mainLable == '0') {
         mainLable = number; 
       } else {
         mainLable += number; 

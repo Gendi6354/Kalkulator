@@ -10,10 +10,11 @@ Buttons({ Key? key,}) : super(key: key);
   @override
   Widget build(BuildContext context){
      final List<String> listOfButtons = [
-      '7', '8', '9', 'C',
+      ' ',' ','C','/',
+      '7', '8', '9', '*',
       '4', '5', '6', '+',
       '1', '2', '3', '-',
-      '0','*', '/', '='
+      ' ','0', '.', '='
     ];
     return 
     ValueListenableBuilder<ThemeColors>(
@@ -23,7 +24,7 @@ Buttons({ Key? key,}) : super(key: key);
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, // 4 przyciski w każdym rzędzie
                     crossAxisSpacing: 8, // odstęp w poziomie
-                    mainAxisSpacing: 8,  // odstęp w pionie
+                    mainAxisSpacing: 2,  // odstęp w pionie
                   ),
                   itemCount: listOfButtons.length,    
                   itemBuilder: (context, index)
