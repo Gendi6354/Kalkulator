@@ -4,7 +4,7 @@ import 'package:kalkulator/models/theme_Notifier.dart';
 
 
 class Buttons extends StatelessWidget {
-Buttons({ Key? key,}) : super(key: key);
+const Buttons({ Key? key,}) : super(key: key);
 
 
   @override
@@ -21,10 +21,13 @@ Buttons({ Key? key,}) : super(key: key);
       valueListenable: themeNotifier,
       builder: (context, value, child) {
         return GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, // 4 przyciski w każdym rzędzie
                     crossAxisSpacing: 8, // odstęp w poziomie
-                    mainAxisSpacing: 2,  // odstęp w pionie
+                    mainAxisSpacing: 4,// odstęp w pionie
+                    childAspectRatio: 1.1, 
+
                   ),
                   itemCount: listOfButtons.length,    
                   itemBuilder: (context, index)

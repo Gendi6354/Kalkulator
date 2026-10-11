@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kalkulator/models/theme_Notifier.dart';
 import 'package:kalkulator/view/settings.dart';
 import 'package:kalkulator/widgets/buttons.dart';
-import 'package:kalkulator/widgets/calc_Lable.dart';
+import 'package:kalkulator/widgets/calc_Label.dart';
+import 'package:kalkulator/widgets/calc_history.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -46,14 +47,16 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                
                 Expanded(
-                  flex: 5,
-                  child: CalcLable(),
+                  flex: 3,
+                  child: CalcHistory(),
                 ),
-                
                 Expanded(
-                  flex: 9,
+                  flex: 4,
+                  child: CalcLabel(),
+                ),
+                Expanded(
+                  flex: 10,
                   child: Buttons(),
                 ),
               ],

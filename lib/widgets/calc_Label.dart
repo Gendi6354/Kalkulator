@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kalkulator/models/calculator_notifier.dart';
 import 'package:kalkulator/models/theme_Notifier.dart';
 
-class CalcLable extends StatelessWidget {
-  const CalcLable({Key? key}) : super(key: key);
+class CalcLabel extends StatelessWidget {
+  const CalcLabel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,6 @@ class CalcLable extends StatelessWidget {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.end, 
                   children: [
-                    SizedBox(
-                      height: 100,
-                    ),
                     Row(
                       children:[ Text(
                         textAlign: TextAlign.right,
@@ -33,7 +30,7 @@ class CalcLable extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [Text(
                         textAlign: TextAlign.right,
-                        value.mainLable,
+                        value.mainlabel,
                         style: TextStyle(fontSize: 60,color: theme.textColor),),
                   ])
                   ],
