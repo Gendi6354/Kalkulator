@@ -30,16 +30,16 @@ Buttons({ Key? key,}) : super(key: key);
                   { 
                     return 
                     FilledButton(
-                    style: FilledButton.styleFrom(
-                      backgroundColor: value.primaryColor
-                    ),
-                    onPressed: ()=> calculatorNotifier.handleButtonTap(listOfButtons[index]),
-                    child: Text(listOfButtons[index],
-                    style: TextStyle(fontSize: 20,color: value.textColor),),
-                    );
-                  },
-        );
-      }
-    );
+                      style: FilledButton.styleFrom(
+                        backgroundColor: value.primaryColor
+                      ),
+                      onPressed: ()=> calculatorNotifier.handleButtonTap(listOfButtons[index]),
+                      child: Text(listOfButtons[index],
+                      style: TextStyle(fontSize: 20,color: value.textColor),),
+                      );
+                    },
+          );
+        }
+      );
+    }
   }
-}
