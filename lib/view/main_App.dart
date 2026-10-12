@@ -36,8 +36,20 @@ class MainScreen extends StatelessWidget {
                           ),
                           onPressed: () {
                             Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Settings(),
+                              PageRouteBuilder(
+                                pageBuilder: (context, animation, secondaryAnimation) => Settings(),
+                                transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: ScaleTransition(
+                                      scale: Tween<double>(begin: 0.95, end: 1.0).animate(
+                                        CurvedAnimation(parent: animation, curve: Curves.easeOut),
+                                      ),
+                                      child: child,
+                                    ),
+                                  );
+                                },
+                                transitionDuration: const Duration(milliseconds: 250),
                               ),
                             );
                           },
@@ -48,11 +60,11 @@ class MainScreen extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: CalcHistory(),
                 ),
                 Expanded(
-                  flex: 4,
+                  flex: 5,
                   child: CalcLabel(),
                 ),
                 Expanded(
